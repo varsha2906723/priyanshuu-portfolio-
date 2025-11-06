@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Editor Portfolio</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    
+  :root{
+    
+body {
+  background-image: url('background.jpg');
+  background-size: cover;         
+  background-position: center;    
+  background-repeat: no-repeat;   
+  background-attachment: fixed;   
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);  
+  z-index: -1;                     
+}
+
+      --bg:#0f1724;
+      --card:#0b1220;
+      --accent:#ff6b6b;
+      --muted:rgba(255,255,255,0.7);
+      --glass:rgba(255,255,255,0.04);
+      --glass-2:rgba(255,255,255,0.02);
+      --glass-border:rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color: #e6eef8;
+      min-height:100vh;
+    }
+
+    .container-xl{max-width:1180px}
+
+    .navbar{
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .brand{
+      font-family:'Playfair Display', serif;
+      letter-spacing:0.4px;
+      font-weight:700;
+      color:var(--accent);
+      font-size:1.25rem;
+    }
+    .nav-link{color:var(--muted) !important}
+
+    .hero{
+      padding:72px 0 36px;
+      display:grid;
+      grid-template-columns: 1fr 420px;
+      gap:32px;
+      align-items:center;
+    }
+    .hero-card{
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--glass-border);
+      padding:28px;
+      border-radius:18px;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+    .headline{
+      font-family:'Playfair Display', serif;
+      font-size:40px;
+      margin:0 0 8px;
+      line-height:1.02;
+    }
+    .sub{color:var(--muted);margin-bottom:18px}
+
+    .avatar-wrap{position:relative}
+    .avatar{
+      width:100%;
+      border-radius:14px;
+      aspect-ratio: 3/4;
+      object-fit:cover;
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+    }
+    .tagline-bubble{
+      position:absolute;left:10px;bottom:12px;background:linear-gradient(90deg,var(--accent),#ffd36b);
+      color:#061024;padding:8px 12px;border-radius:999px;font-weight:600;font-size:0.9rem;
+      box-shadow:0 6px 18px rgba(255,107,107,0.12);
+    }
+
+    .services{display:flex;gap:12px;flex-wrap:wrap}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid var(--glass-border);background:var(--glass-2);font-weight:600}
+
+    .project-card{background: rgba(255,255,255,0.015);
+      border:1px solid var(--glass-border);border-radius:14px;padding:16px;overflow:hidden;position:relative;min-height:180px}
+    .project-card:hover{transform:translateY(-6px);transition:all .28s;box-shadow:0 20px 50px rgba(2,6,23,0.6)}
+
+    .quote{font-size:1rem;font-style:italic;color:var(--muted)}
+
+    .glass-input{background:transparent;border:1px solid var(--glass-border);padding:12px;border-radius:10px;color:inherit}
+
+    footer{margin-top:48px;padding:28px 0 60px;color:var(--muted)}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;}
+      .avatar{aspect-ratio: 16/9}
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expa
+
+
+nd-lg sticky-top">
+  <div class="container-xl">
+    <a class="navbar-brand brand" href="#">EDITORA</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"><i class="fa fa-bars" style="color:var(--muted)"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="#work" class="nav-link">Work</a></li>
+        <li class="nav-item"><a href="#testimonials" class="nav-link">Testimonials</a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        <li class="nav-item ms-3"><a class="btn btn-sm btn-outline-light" href="#contact">Hire Me</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="container-xl">
+  <section class="hero" id="home">
+    <div class="hero-card">
+      <p class="sub">Hello — I’m</p>
+      <h1 class="headline">A Creative Video & Content Editor</h1>
+      <p class="sub">I craft stories using rhythm, pacing, and color. I transform raw footage into engaging narratives for social, film, and brand content.</p>
+
+      <div class="services mb-3">
+        <span class="chip">Video Editing</span>
+        <span class="chip">Color Grading</span>
+        <span class="chip">Sound Design</span>
+        <span class="chip">Motion Graphics</span>
+        <span class="chip">YouTube Shorts & Reels</span>
+      </div>
+
+      <div class="d-flex gap-2 align-items-center mb-3">
+        <a class="btn btn-lg btn-primary" href="#work">View Work <i class="fa fa-play ms-2"></i></a>
+        <a class="btn btn-outline-light" href="#contact">Let's Talk</a>
+      </div>
+    </div>
+
+    <div class="avatar-wrap">
+      <img class="avatar" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=800&auto=format&fit=crop" alt="editor avatar">
+      <div class="tagline-bubble">Storyteller & Visual Stylist</div>
+    </div>
+  </section>
+
+  <section id="about" class="mt-5">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-8">
+        <div class="hero-card">
+          <h3>About Me</h3>
+          <p class="sub">I’m an editor who enjoys the quiet craft of cutting: choosing the right frame, listening for rhythm, and sculpting emotion with sound and motion.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="hero-card text-center">
+          <h5 class="mb-3">Quick Stats</h5>
+          <div class="d-flex justify-content-around align-items-center">
+            <div>
+              <h3 class="mb-0">120+</h3>
+              <small class="text-muted">Projects</small>
+            </div>
+            <div>
+              <h3 class="mb-0">4.9</h3>
+              <small class="text-muted">Avg Rating</small>
+            </div>
+            <div>
+              <h3 class="mb-0">35k</h3>
+              <small class="text-muted">Subs Reached</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <section id="work" class="mt-5">
+  <h3 class="mb-4 text-center">Selected Work</h3>
+  <div class="row g-4">
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project1.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 1</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project2.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 2</p>
+      </div>
+    </div>
+
+    <!-- Video 3 -->
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project3.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 3</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project4.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 4</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project5.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 5</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project6.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 6</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project7.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 7</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project8.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 8</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project9.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 9</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project10.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 10</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project11.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 11</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project12.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 12</p>
+      </div>
+    </div>
+
+    
+    <div class="col-md-4 col-sm-6">
+      <div class="project-card">
+        <div class="ratio ratio-16x9">
+          <video controls>
+            <source src="videos/project13.mp4" type="video/mp4">
+          </video>
+        </div>
+        <p class="text-center mt-2">Project 13</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    
+  <section id="contact" class="mt-5">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="hero-card">
+          <h3>Contact & Availability</h3>
+          <p class="sub">Open to freelance projects and collaborations. I typically respond within 24-48 hours.</p>
+          <form id="contactForm">
+            <div class="mb-2">
+              <input class="glass-input w-100" placeholder="Your name" required>
+            </div>
+            <div class="mb-2">
+              <input class="glass-input w-100" placeholder="Email" type="email" required>
+            </div>
+            <div class="mb-2">
+              <textarea class="glass-input w-100" placeholder="Project brief / message" rows="4"></textarea>
+            </div>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" type="submit">Send Message</button>
+              <button class="btn btn-outline-light" type="button">Download CV</button>
+            </div>
+          </form>
+        </div>
+        <a href="https://wa.me/919279632993" 
+   target="_blank" 
+   class="btn btn-success">
+   <i class="fa-brands fa-whatsapp"></i> Chat with me on WhatsApp
+</a>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="mt-5">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <strong>EDITORA</strong>
+        <div class="text-muted small">Editor & Visual Storyteller</div>
+      </div>
+      <div class="text-muted small">© 2025 · Built with care</div>
+    </div>
+  </footer>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
